@@ -1,6 +1,6 @@
 # MongoBackup.py
 
-This script copies over all the collections in a mongo database to json files. It then compresses the files into a .zip format and uploads them to min.io
+This script runs mongodump on the given database. It then compresses the dumps into a .zip format and uploads them to min.io
 
 ## Getting Started
 
@@ -38,6 +38,8 @@ MongoHost=mongo_hostname
 User=mongo_admin_username
 Password=mongo_admin_password
 ```
+
+If you want to use environment variables instead of pasting your information in plain text, run the script using the ```-e``` or  ```--environment``` flags. And have your credentials.txt file store your variable names instead of their values. 
 
 ## Deployment
 
