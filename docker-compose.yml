@@ -1,0 +1,28 @@
+version: '3'
+services:
+    backup: 
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: mongobackup
+        volumes:
+            - ./config:/config
+        depends_on:
+            - minio
+            - db
+    minio:
+        image: minio/minio
+        command: server /data
+        environment:
+        - MINIO_ACCESS_KEY=accesskey
+        - MINIO_SECRET_KEY=secretkey
+        ports:
+        - 9000
+    db:
+        image: mongo:4.2.2
+        environment:
+            - MONGO_INITDB_ROOT_USERNAME=MONGOUSER
+            - MONGO_INITDB_ROOT_PASSWORD=MONGOPASSWORD
+        command: --bind_ip_all
+        ports:
+            - 27017
