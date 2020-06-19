@@ -2,7 +2,7 @@
 MongoBackupMinio is a nodejs package that allows you to backup Mongo databases to min.io.
 
 ## Installation
-[Make sure you have Mongodb tool installed on your computer](https://docs.mongodb.com/manual/installation/)
+[Make sure you have Mongodb tool installed on your computer and in your PATH](https://docs.mongodb.com/manual/installation/)
 
 Then run
 ```bash
